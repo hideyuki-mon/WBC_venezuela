@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>WBC 2026 準々決勝 日本 vs ベネズエラ 予習ストーリー図解</title>
+<style>
+  :root{
+    --bg:#0b1020;
+    --panel:#121a33;
+    --panel2:#0f1630;
+    --text:#e9eefc;
+    --muted:#b9c2e6;
+    --line:rgba(255,255,255,.12);
+
+    --jpn:#ff3b57;   /* Japan red */
+    --ven:#7d2a4a;   /* Venezuela wine */
+    --gold:#ffd36a;
+    --good:#38d996;
+    --warn:#ffb020;
+    --bad:#ff5d5d;
+
+    --shadow: 0 18px 50px rgba(0,0,0,.35);
+    --radius: 18px;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Hiragino Kaku Gothic ProN",
+                 "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+    background:
+      radial-gradient(1200px 600px at 20% -10%, rgba(255,59,87,.22), transparent 60%),
+      radial-gradient(900px 520px at 95% 0%, rgba(125,42,74,.28), transparent 62%),
+      radial-gradient(900px 620px at 50% 115%, rgba(255,211,106,.18), transparent 55%),
+      var(--bg);
+    color:var(--text);
+  }
+
+  a{color:#a7c8ff; text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .wrap{max-width:1080px; margin:0 auto; padding:26px 18px 60px}
+  .nav{
+    display:flex; gap:10px; flex-wrap:wrap;
+    position:sticky; top:0; z-index:20;
+    padding:12px 10px;
+    background: linear-gradient(to bottom, rgba(11,16,32,.9), rgba(11,16,32,.65));
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .pill{
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background: rgba(255,255,255,.04);
+    font-weight:700;
+    font-size:14px;
+  }
+  .pill strong{letter-spacing:.2px}
+  .pill.j{border-color:rgba(255,59,87,.35)}
+  .pill.v{border-color:rgba(125,42,74,.45)}
+  .pill.g{border-color:rgba(255,211,106,.35)}
+  .pill:active{transform:translateY(1px)}
+  .hero{
+    margin-top:16px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+    background: linear-gradient(135deg, rgba(255,59,87,.12), rgba(125,42,74,.16)),
+                rgba(255,255,255,.03);
+  }
+  .hero-in{
+    display:grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap:16px;
+    padding:18px;
+  }
+  @media (max-width: 860px){
+    .hero-in{grid-template-columns:1fr}
+  }
+  .title{
+    padding:8px 8px 2px;
+  }
+  .title h1{
+    margin:0;
+    font-size: clamp(22px, 2.7vw, 34px);
+    line-height:1.2;
+    letter-spacing:.3px;
+  }
+  .subtitle{
+    margin:10px 0 0;
+    color:var(--muted);
+    line-height:1.55;
+    font-weight:600;
+  }
+
+  .badgeRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 10px;
+    border-radius:999px;
+    background: rgba(0,0,0,.18);
+    border:1px solid var(--line);
+    font-weight:800;
+    font-size:13px;
+  }
+  .dot{width:10px;height:10px;border-radius:50%}
+  .dot.j{background:var(--jpn)}
+  .dot.v{background:var(--ven)}
+  .dot.g{background:var(--gold)}
+
+  figure{
+    margin:0;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background: rgba(0,0,0,.18);
+  }
+  figure img{width:100%; display:block}
+  figcaption{
+    padding:10px 12px;
+    font-size:12px;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+    line-height:1.4;
+  }
+
+  .grid{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap:14px;
+  }
+  .card{
+    grid-column: span 6;
+    border-radius:var(--radius);
+    background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .card.wide{grid-column: span 12}
+  @media (max-width: 900px){
+    .card{grid-column: span 12}
+  }
+  .card-h{
+    padding:14px 16px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    background: rgba(0,0,0,.15);
+  }
+  .card-h h2{
+    margin:0;
+    font-size:16px;
+    letter-spacing:.2px;
+  }
+  .tag{
+    font-size:12px;
+    font-weight:900;
+    color:var(--muted);
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background: rgba(255,255,255,.04);
+    white-space:nowrap;
+  }
+  .content{padding:14px 16px}
+  .content p{margin:0 0 10px; color:var(--text); line-height:1.65}
+  .content p:last-child{margin-bottom:0}
+  .small{color:var(--muted); font-size:13px}
+
+  /* Story timeline */
+  .timeline{margin:8px 0 0; padding:0; list-style:none}
+  .timeline li{
+    position:relative;
+    padding:12px 12px 12px 40px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background: rgba(0,0,0,.14);
+    margin-bottom:10px;
+  }
+  .timeline li:last-child{margin-bottom:0}
+  .timeline li::before{
+    content:"";
+    position:absolute;
+    left:14px; top:14px;
+    width:14px; height:14px;
+    border-radius:6px;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px rgba(255,211,106,.12);
+  }
+  .timeline .k{font-weight:950}
+  .timeline .note{color:var(--muted); font-size:13px; margin-top:4px}
+
+  /* Matchups */
+  .vs{
+    display:grid;
+    grid-template-columns: 1fr 120px 1fr;
+    gap:12px;
+    align-items:stretch;
+  }
+  @media (max-width: 720px){
+    .vs{grid-template-columns:1fr}
+  }
+  .team{
+    border-radius:16px;
+    border:1px solid var(--line);
+    background: rgba(0,0,0,.14);
+    padding:12px;
+    position:relative;
+    overflow:hidden;
+  }
+  .team::after{
+    content:"";
+    position:absolute;
+    inset:-30px -50px auto auto;
+    width:160px; height:160px;
+    border-radius:50%;
+    filter: blur(0px);
+    opacity:.15;
+  }
+  .team.j::after{background: var(--jpn)}
+  .team.v::after{background: var(--ven)}
+  .tname{display:flex; align-items:center; gap:10px; font-weight:950}
+  .tname .dot{width:12px;height:12px;border-radius:50%}
+  .rows{margin-top:10px; display:grid; gap:10px}
+  .row{
+    display:flex; justify-content:space-between; gap:10px;
+    padding:10px 10px;
+    border-radius:12px;
+    border:1px dashed rgba(255,255,255,.16);
+    background: rgba(255,255,255,.03);
+    font-size:14px;
+  }
+  .row b{white-space:nowrap}
+  .mid{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:8px;
+    border-radius:16px;
+    border:1px solid var(--line);
+    background: rgba(0,0,0,.14);
+    padding:12px;
+    text-align:center;
+  }
+  .mid .big{font-weight:1000; letter-spacing:.8px}
+  .mid .sub{font-size:12px; color:var(--muted); line-height:1.35}
+
+  /* Decision map */
+  .map{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap:12px;
+    margin-top:8px;
+  }
+  .node{
+    grid-column: span 4;
+    border-radius:16px;
+    border:1px solid var(--line);
+    background: rgba(0,0,0,.14);
+    padding:12px;
+    position:relative;
+    min-height:98px;
+  }
+  @media (max-width: 900px){
+    .node{grid-column: span 6}
+  }
+  @media (max-width: 620px){
+    .node{grid-column: span 12}
+  }
+  .node h3{
+    margin:0;
+    font-size:14px;
+    letter-spacing:.2px;
+  }
+  .node p{
+    margin:8px 0 0;
+    color:var(--muted);
+    line-height:1.55;
+    font-size:13px;
+  }
+  .node .mark{
+    position:absolute;
+    right:10px; top:10px;
+    font-weight:1000;
+    font-size:12px;
+    padding:6px 9px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background: rgba(255,255,255,.04);
+  }
+  .mark.j{border-color:rgba(255,59,87,.35)}
+  .mark.v{border-color:rgba(125,42,74,.45)}
+  .mark.r{border-color:rgba(255,211,106,.45)}
+  .arrow{
+    grid-column: span 12;
+    height:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,.45);
+    font-weight:900;
+    letter-spacing:.6px;
+  }
+
+  /* Rule chips */
+  .chips{display:flex; flex-wrap:wrap; gap:10px}
+  .chip{
+    border:1px solid var(--line);
+    background: rgba(0,0,0,.14);
+    padding:10px 11px;
+    border-radius:999px;
+    font-size:13px;
+    color:var(--text);
+    font-weight:850;
+  }
+  .chip em{font-style:normal; color:var(--muted); font-weight:800}
+
+  /* Checklist */
+  .check{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+  }
+  @media (max-width: 720px){.check{grid-template-columns:1fr}}
+  .item{
+    border:1px solid var(--line);
+    border-radius:16px;
+    background: rgba(0,0,0,.14);
+    padding:12px;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .box{
+    width:18px; height:18px;
+    border-radius:6px;
+    border:2px solid rgba(255,255,255,.35);
+    margin-top:2px;
+    flex:0 0 auto;
+  }
+  .item b{display:block; margin-bottom:4px}
+  .item span{color:var(--muted); font-size:13px; line-height:1.55}
+
+  details{
+    border-top:1px solid var(--line);
+    background: rgba(255,255,255,.02);
+  }
+  summary{
+    cursor:pointer;
+    padding:12px 16px;
+    font-weight:950;
+    color:var(--text);
+    list-style:none;
+  }
+  summary::-webkit-details-marker{display:none}
+  details .content{padding-top:0}
+  .src{
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid var(--line);
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+</style>
+</head>
+
+<body>
+  <div class="nav">
+    <a class="pill j" href="#story"><strong>ストーリー</strong></a>
+    <a class="pill v" href="#matchup"><strong>主役と対決</strong></a>
+    <a class="pill g" href="#map"><strong>勝負の分岐点マップ</strong></a>
+    <a class="pill" href="#rules"><strong>ルールで得する</strong></a>
+    <a class="pill" href="#check"><strong>当日の見方</strong></a>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-in">
+        <div class="title">
+          <h1>WBC 2026 準々決勝：日本 vs ベネズエラ<br>「試合前に読む」予習ストーリー図解</h1>
+          <p class="subtitle">
+            負けたら即終了。球数制限で継投が早まりやすく、終盤は延長の"無死二塁"でドラマが起きやすい。
+            観戦の「見るポイント」だけを最短でまとめた1枚。
+          </p>
+          <div class="badgeRow">
+            <span class="badge"><span class="dot g"></span>ノックアウト（負けたら終了）</span>
+            <span class="badge"><span class="dot j"></span>日本：プール戦4-0</span>
+            <span class="badge"><span class="dot v"></span>ベネズエラ：プール戦3-1</span>
+          </div>
+        </div>
+
+        <figure>
+          <img src="https://img.mlbstatic.com/mlb-images/image/upload/t_16x9/t_w1024/mlb/gl39p0zj7ftdzoztkmbx.jpg" alt="WBC 2026 Venezuela vs Japan">
+          <figcaption>
+            画像：MLB公式記事の見出し画像。
+            出典：<a href="https://www.mlb.com/world-baseball-classic/news/venezuela-vs-japan-in-2026-world-baseball-classic-quarterfinals" target="_blank" rel="noreferrer">MLB.com</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section id="story" class="card">
+        <div class="card-h">
+          <h2>ストーリー（3分で頭に入る）</h2>
+          <span class="tag">試合前の予習</span>
+        </div>
+        <div class="content">
+          <ul class="timeline">
+            <li>
+              <div class="k">① 舞台：準々決勝（負けたら帰国）</div>
+              <div class="note">ノックアウトの緊張感で、采配（さいはい）が一気に攻め寄りになる。</div>
+            </li>
+            <li>
+              <div class="k">② 日本：無敗で到着</div>
+              <div class="note">プール戦4-0。流れが強いチームは"ミスが減る"ことが多い。</div>
+            </li>
+            <li>
+              <div class="k">③ ベネズエラ：上位打線が熱い</div>
+              <div class="note">塁に出て、返す形ができている。序盤の失点が致命傷になりやすい。</div>
+            </li>
+            <li>
+              <div class="k">④ 先発は長く投げにくい（球数制限）</div>
+              <div class="note">準々決勝は上限80球。中盤から"継投の勝負"に入りやすい。</div>
+            </li>
+            <li>
+              <div class="k">⑤ 9回で決まらないと、10回から無死二塁</div>
+              <div class="note">いきなり点が入りやすくなる＝終盤の作戦が増えて面白い。</div>
+            </li>
+          </ul>
+
+          <div class="src">
+            主な出典：
+            <a href="https://www.mlb.com/world-baseball-classic/news/venezuela-vs-japan-in-2026-world-baseball-classic-quarterfinals" target="_blank" rel="noreferrer">MLB.com（試合プレビュー）</a> /
+            <a href="https://www.mlb.com/news/world-baseball-classic-rules-rule-modifications-2026" target="_blank" rel="noreferrer">MLB.com（WBC 2026 ルール）</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="matchup" class="card">
+        <div class="card-h">
+          <h2>主役と対決（ここだけ見ればOK）</h2>
+          <span class="tag">投手×打線</span>
+        </div>
+        <div class="content">
+          <div class="vs">
+            <div class="team v">
+              <div class="tname"><span class="dot v dot"></span>ベネズエラ（Away）</div>
+              <div class="rows">
+                <div class="row"><b>先発</b><span>レンジャー・スアレス（左）</span></div>
+                <div class="row"><b>怖い形</b><span>出塁→得点の流れ</span></div>
+                <div class="row"><b>注目</b><span>アラエス／アクーニャJr.</span></div>
+              </div>
+            </div>
+
+            <div class="mid">
+              <div class="big">VS</div>
+              <div class="sub">
+                準々決勝は上限80球<br>
+                → 中盤から継投勝負
+              </div>
+            </div>
+
+            <div class="team j">
+              <div class="tname"><span class="dot j dot"></span>日本（Home）</div>
+              <div class="rows">
+                <div class="row"><b>先発</b><span>山本由伸（右）</span></div>
+                <div class="row"><b>流れ</b><span>プール戦4-0</span></div>
+                <div class="row"><b>目標</b><span>終盤まで僅差で耐える</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="src">
+            出典：
+            <a href="https://www.mlb.com/world-baseball-classic/news/venezuela-vs-japan-in-2026-world-baseball-classic-quarterfinals" target="_blank" rel="noreferrer">MLB.com（先発・状況）</a>
+          </div>
+        </div>
+
+        <details>
+          <summary>ベネズエラ打線が怖い理由（超要点）</summary>
+          <div class="content">
+            <p>
+              MLB記事では、アラエスが長打を量産し、アクーニャJr.が得点を重ねていると紹介されています。
+              中学生向けに言うと「<b>塁に出る人</b>と<b>ホームに帰る人</b>がハマっている」状態です。
+            </p>
+            <div class="src">
+              出典：
+              <a href="https://www.mlb.com/world-baseball-classic/news/venezuela-vs-japan-in-2026-world-baseball-classic-quarterfinals" target="_blank" rel="noreferrer">MLB.com（アラエス/アクーニャの成績）</a>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section id="map" class="card wide">
+        <div class="card-h">
+          <h2>勝負の分岐点マップ（ここを見ると"今どこが大事か"が分かる）</h2>
+          <span class="tag">見どころの地図</span>
+        </div>
+        <div class="content">
+          <div class="map">
+            <div class="node">
+              <span class="mark r">序盤</span>
+              <h3>分岐点A：先発が"短い回"で崩れるか？</h3>
+              <p>球数制限で長く投げにくい。だから序盤の失点が重くなりやすい（取り返す時間が減る）。</p>
+            </div>
+
+            <div class="node">
+              <span class="mark v">ベネズエラ</span>
+              <h3>分岐点B：アラエスが出る→アクーニャが帰す形</h3>
+              <p>上位打線が動くと、1点が"2〜3点"になりやすい。投手は四球が一番ダメ。</p>
+            </div>
+
+            <div class="node">
+              <span class="mark j">日本</span>
+              <h3>分岐点C：中盤の"継投1人目"が流れを止めるか</h3>
+              <p>準々決勝は上限80球。4〜6回が勝負になりやすい（誰が投げるかで空気が変わる）。</p>
+            </div>
+
+            <div class="arrow">↓ 終盤（7回以降）になるほど、作戦と緊張感が増える ↓</div>
+
+            <div class="node">
+              <span class="mark r">終盤</span>
+              <h3>分岐点D：1点差の場面で"守りの選択"が当たるか</h3>
+              <p>同点〜1点差だと、ミス1つが即決着。守備位置・バッテリーの配球が超大事。</p>
+            </div>
+
+            <div class="node">
+              <span class="mark r">延長</span>
+              <h3>分岐点E：10回から無死二塁（いきなり得点圏）</h3>
+              <p>バント・敬遠・前進守備などが一気に増えて、野球の"頭脳戦"が見える。</p>
+            </div>
+
+            <div class="node">
+              <span class="mark r">次の章</span>
+              <h3>勝ったら：準決勝へ（マイアミ）</h3>
+              <p>勝者は準決勝へ進み、別カードの勝者と対戦。</p>
+            </div>
+          </div>
+
+          <div class="src">
+            出典（球数制限・延長ルール）：
+            <a href="https://www.mlb.com/news/world-baseball-classic-rules-rule-modifications-2026" target="_blank" rel="noreferrer">MLB.com（WBC 2026 ルール）</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="rules" class="card">
+        <div class="card-h">
+          <h2>ルールで得する（覚えるのは4つだけ）</h2>
+          <span class="tag">見え方が変わる</span>
+        </div>
+        <div class="content">
+          <div class="chips">
+            <div class="chip">10回〜：<b>無死二塁</b> <em>（いきなりチャンス）</em></div>
+            <div class="chip">球数：<b>準々決勝80球</b> <em>（先発は早めに交代しがち）</em></div>
+            <div class="chip"><b>スリーバッター</b> <em>（投手交代の縛り）</em></div>
+            <div class="chip"><b>ABSなし</b> <em>（機械判定は使わない）</em></div>
+          </div>
+
+          <div class="src">
+            出典：
+            <a href="https://www.mlb.com/news/world-baseball-classic-rules-rule-modifications-2026" target="_blank" rel="noreferrer">MLB.com（WBC 2026 ルール）</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="check" class="card">
+        <div class="card-h">
+          <h2>当日の見方（これだけチェック）</h2>
+          <span class="tag">観戦のコツ</span>
+        </div>
+        <div class="content">
+          <div class="check">
+            <div class="item">
+              <div class="box"></div>
+              <div>
+                <b>1〜3回：先発の"テンポ"</b>
+                <span>三者凡退が続くと守備が落ち着く。逆に四球が出ると一気に空気が変わる。</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box"></div>
+              <div>
+                <b>4〜6回：継投1人目</b>
+                <span>球数制限で交代が早い。ここで流れが決まりやすい。</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box"></div>
+              <div>
+                <b>7回以降：同点なら"延長の影"</b>
+                <span>10回無死二塁があるので、采配が急に攻め/守りに振れやすい。</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box"></div>
+              <div>
+                <b>終盤：1点の価値が跳ね上がる</b>
+                <span>点が入りにくいときほど、1つの走塁・守備が勝敗を決める。</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="small" style="margin-top:12px">
+            ※「なぜ今日は継投が早い？」→ 準々決勝は上限80球の球数制限があるため。
+          </p>
+
+          <div class="src">
+            出典：
+            <a href="https://www.mlb.com/news/world-baseball-classic-rules-rule-modifications-2026" target="_blank" rel="noreferrer">MLB.com（球数制限・延長ルール）</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
